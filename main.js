@@ -19,6 +19,11 @@ function GetSelectedValue(){
     return elem.options[elem.selectedIndex].value;
 }
 
+function GetSelectedText(){
+    var e = document.getElementById("listAlumnos");
+    return e.options[e.selectedIndex].text;
+}
+
 function GetPromedio(a,b){
     return (parseInt(a) + parseInt(b) )/2
    
@@ -31,15 +36,15 @@ function GetStatus(prom){
 
 btn1.addEventListener('click',()=>{
     let persona = GetSelectedValue()
-
+    let txt = GetSelectedText()
     if ( persona !== "") {
         
-        let nota1 = prompt("Ingresa la nota1:");
+        let nota1 = prompt(`¿Ingresa la primera nota para ${txt}?` );
         if (nota1 === "") {
             alert ("No puede estar vacio el campo")
             return false
         } 
-        let nota2 = prompt("Ingresa la nota2:");
+        let nota2 = prompt(`¿Ingresa la segunda nota para ${txt}?`);
         if (nota2 === "") {
             alert ("No puede estar vacio el campo")
             return false
