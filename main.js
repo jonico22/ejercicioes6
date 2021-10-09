@@ -11,6 +11,18 @@ let select = document.getElementById("listAlumnos");
 let btn1 =  document.getElementById("addNota");
 
 
+function getAlumnos() {
+    alumnos.forEach((value) => { 
+        let el = document.createElement("option");
+        el.textContent = value;
+        el.value = value;
+        select.appendChild(el);
+    });
+}
+
+// rellenar combo
+getAlumnos()
+
 // Solicitar las notas por alumno
 //Aquí va tu código
 
@@ -106,14 +118,3 @@ function getStatus (){
 //en consola ejecutar la funcion
 
 console.log(estados);
-
-function getAlumnos() {
-    alumnos.forEach((value) => { 
-        let el = document.createElement("option");
-        el.textContent = value;
-        el.value = value;
-        select.appendChild(el);
-    });
-}
-
-getAlumnos()
